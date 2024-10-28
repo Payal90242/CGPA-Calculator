@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+float convertMarksToGradePoint(float marks)
+{
+ if(marks>=90)
+ return 10.0;
+ else if(marks>=80)
+ return 9.0;
+  else if(marks>=70)
+ return 8.0;
+  else if(marks>=60)
+ return 7.0;
+  else if(marks>=50)
+ return 6.0;
+  else if(marks>=40)
+ return 5.0;
+  else 
+  return 0.0;
+}
+int main()
+{
+ system("cls");
+ int numSubjects;
+ float marks,gradePoint,TotalGradePoint=0,cgpa;
+ cout<<"Enter the number of subject:";
+ cin>>numSubjects;
+ for(int i=1;i<=numSubjects;i++)
+ {
+  cout<<"Enter marks for subject"<<i<<":";
+  cin>>marks;
+  gradePoint=convertMarksToGradePoint(marks);
+  TotalGradePoint+=gradePoint;
+ }
+ cgpa=TotalGradePoint/numSubjects;
+ cout<<"Your CGPA is:"<<cgpa<<endl;
+ return 0;
+}
